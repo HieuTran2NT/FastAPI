@@ -97,10 +97,11 @@ jobs:
             const prNumber = context.issue.number;
             const filesToUpload = "${{ steps.files.outputs.files }}";
             const commentBody = `
-              🚀 **Deployment Information**:
-              Files to be uploaded to S3:
-              ${filesToUpload ? filesToUpload.split(' ').join('\n') : 'No files to upload (empty PR)'}
-                    `;
+            🚀 **Deployment Information**:
+
+            **Files to be uploaded to S3:**
+            ${filesToUpload ? filesToUpload.split(' ').map(f => `- ${f}`).join('\n') : 'No files to upload (empty PR)'}
+            `;
             
             // Write comment back on the PR
             await github.rest.issues.createComment({
