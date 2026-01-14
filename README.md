@@ -2,6 +2,7 @@
 # FastAPI Todos (Docker + PostgreSQL)
 
 A simple multi-company to-dos API built with **FastAPI**, **SQLAlchemy**, **Alembic**, and **PostgreSQL**. Runs via **Docker Compose**.
+test
 
 ## Features
 - Companies created via migration script (seeded sample companies).
